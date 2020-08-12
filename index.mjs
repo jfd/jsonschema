@@ -1,1 +1,1 @@
-export * as JsonSchema from "./src/JsonSchema.js";
+export * as JsonSchema from "./src/JsonSchema.mjs";
