@@ -1,6 +1,7 @@
+import Url from "url";
+
 import {Dict} from "//es.parts/ess/0.0.1/";
 import {List} from "//es.parts/ess/0.0.1/";
-import {Url} from "//es.parts/ess/0.0.1/";
 
 export {validate};
 
