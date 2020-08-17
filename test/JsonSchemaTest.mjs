@@ -173,7 +173,6 @@ export {testValidOneOf};
 export {testInvalidOneOf};
 export {testOneOfNotThrow};
 
-export {testIsolated};
 
 function testSimpleObjectValidObject() {
     shouldPass({}, {'type': 'object'});
@@ -1082,42 +1081,6 @@ function testOneOfNotThrow() {
 
     shouldPass({ 'name2': 'test2' }, schema, { throwError: true });
 }
-
-function testIsolated() {
-    const schema = {
-        "type": "object",
-        "title": "User Create Schema",
-        "properties": {
-            "csn": {"type": "string", "minLength": 1},
-            "firstname": {"type": "string", "minLength": 1},
-            "lastname": {"type": "string", "minLength": 1},
-            "email": {"type": "string", "format": "email"},
-            "password": {"type": "string", "minLength": 6},
-            "sap_code": {"type": "string", "minLength": 1},
-            "permissions": {"type": "integer", "minimum": 0}
-        },
-        "required": [
-            "csn",
-            "first_name",
-            "last_name",
-            "email",
-            "password",
-            "permissions"
-        ],
-        "additionalProperties": true
-    };
-
-    const data = {
-        permissions: 233,
-        email: "user@company.com",
-        password: "password1234",
-        first_name: "Firstname",
-        last_name: "Lastname",
-    };
-
-    shouldPass(data, schema);
-}
-
 
 // Internals
 
